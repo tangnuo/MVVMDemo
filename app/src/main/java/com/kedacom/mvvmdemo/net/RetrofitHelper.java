@@ -24,7 +24,6 @@ public class RetrofitHelper {
     /**
      * 服务器地址
      */
-    private static final String SERVER_URL = "http://www.kuaidi100.com/";
     private static final String URL_BASE = "https://news-at.zhihu.com/";
 
     public static RetrofitHelper getInstance() {

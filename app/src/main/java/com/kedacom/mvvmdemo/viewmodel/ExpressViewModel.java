@@ -6,11 +6,15 @@ import android.support.annotation.NonNull;
 
 import com.kedacom.mvvmdemo.bean.ExpressInfo;
 import com.kedacom.mvvmdemo.databinding.ActivityEventBinding;
+import com.kedacom.mvvmdemo.net.ApiService;
 import com.kedacom.mvvmdemo.net.RetrofitHelper;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DefaultObserver;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @Dec ：
@@ -40,7 +44,14 @@ public class ExpressViewModel {
     public void getExpressInfo(String type, String postid) {
         isShowLoading.set(true);
 
-        RetrofitHelper.getInstance().getApiService().getExpressInfoRx(type, postid)
+        // 初始化Retrofit
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://www.kuaidi100.com/")
+                .addConverterFactory(GsonConverterFactory.create()) // json解析
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 支持RxJava
+                .build();
+
+        retrofit.create(ApiService.class).getExpressInfoRx(type, postid)
                 .subscribeOn(Schedulers.io()) // 在子线程中进行Http访问
                 .observeOn(AndroidSchedulers.mainThread()) // UI线程处理返回接口
                 .subscribe(new DefaultObserver<ExpressInfo>() {  // 订阅

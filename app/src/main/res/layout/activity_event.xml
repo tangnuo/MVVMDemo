@@ -34,7 +34,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:text="@{viewModel.expressInfo.data[0].context}" />
+            android:text="@{viewModel.expressInfo.data[0].context}"
+            tools:text="@string/app_name" />
 
         <Button
             android:layout_width="match_parent"
@@ -69,7 +70,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:onClick="@{handler.gotoNews}"
-            android:text="新闻列表1" />
+            android:text="新闻列表1"/>
 
 
         <!--按钮指向的是简单方法-->
