@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         beanList = new ArrayList<>();
-        beanList.add(new ItemBean("新闻列表", NewListActivity.class));
+        beanList.add(new ItemBean("绑定事件", EventActivity.class));
         beanList.add(new ItemBean("新闻列表", NewListActivity.class));
     }
 }
