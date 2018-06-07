@@ -3,8 +3,8 @@ package com.kedacom.mvvmdemo.view;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.Observable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.widget.Toast;
@@ -13,14 +13,17 @@ import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.kedacom.mvvmdemo.R;
 import com.kedacom.mvvmdemo.adapter.NewsAdapter;
-import com.kedacom.mvvmdemo.databinding.ActivityMainBinding;
 import com.kedacom.mvvmdemo.databinding.ActivityNewListBinding;
 import com.kedacom.mvvmdemo.helper.DialogHelper;
-import com.kedacom.mvvmdemo.util.ToastUtils;
+import com.kedacom.mvvmdemo.helper.MyHandler;
 import com.kedacom.mvvmdemo.viewmodel.NewsVM;
 
-import static com.kedacom.mvvmdemo.constant.NewsConstant.LoadData.FIRST_LOAD;
-
+/**
+ * Android MVVM模式的RecyclerView Demo
+ * <p>
+ * https://github.com/zhouxu88/MVVMDemo
+ * </p>
+ */
 public class NewListActivity extends AppCompatActivity implements XRecyclerView.LoadingListener {
 
     private Context mContext;
@@ -28,7 +31,6 @@ public class NewListActivity extends AppCompatActivity implements XRecyclerView.
     private NewsAdapter newsAdapter; //新闻列表的适配器
     private NewsVM newsVM;
 
-    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,7 @@ public class NewListActivity extends AppCompatActivity implements XRecyclerView.
                 } else if (isShow == 3) {
                     loadFailure();
                 } else {
-                    Log.d("caowj","未知的isShow");
+                    Log.d("caowj", "未知的isShow");
                 }
             }
         });
