@@ -17,6 +17,7 @@
         <variable
             name="position"
             type="int" />
+
     </data>
 
     <RelativeLayout

@@ -15,7 +15,7 @@ import com.kedacom.mvvmdemo.R;
 import com.kedacom.mvvmdemo.adapter.NewsAdapter;
 import com.kedacom.mvvmdemo.databinding.ActivityNewListBinding;
 import com.kedacom.mvvmdemo.helper.DialogHelper;
-import com.kedacom.mvvmdemo.helper.MyHandler;
+import com.kedacom.mvvmdemo.helper.EventHandler;
 import com.kedacom.mvvmdemo.viewmodel.NewsVM;
 
 /**

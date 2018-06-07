@@ -5,103 +5,11 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="com.kedacom.mvvmdemo.viewmodel.ExpressViewModel" />
-
-        <variable
-            name="clickListener"
-            type="android.view.View.OnClickListener" />
-
-        <variable
-            name="handler"
-            type="com.kedacom.mvvmdemo.helper.MyHandler" />
-
-        <variable
-            name="msg"
-            type="String" />
-
     </data>
 
-    <LinearLayout
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:text="@{viewModel.expressInfo.data[0].context}" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="@{clickListener}"
-            android:text="获取快递信息" />
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="@{handler::gotoNews}"
-            android:text="新闻列表" />
-
-
-        <!--按钮指向的是简单方法-->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="@{handler.gotoNews}"
-            android:text="新闻列表2" />
-
-
-        <!--按钮指向的是多参数方法-->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="@{(view)->handler.gotoNews(view, msg)}"
-            android:text="新闻列表3" />
-
-
-        <!--使用ID定义指向方法-->
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="新闻列表4" />
-
-        <!--按钮指向的是变量-->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="@{handler.listener}"
-            android:text="新闻列表5" />
-    </LinearLayout>
+        android:layout_height="match_parent" />
 </layout>

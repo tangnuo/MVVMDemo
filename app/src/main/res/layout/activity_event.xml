@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.EventActivity">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kedacom.mvvmdemo.viewmodel.ExpressViewModel" />
+
+        <variable
+            name="clickListener1"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="handler"
+            type="com.kedacom.mvvmdemo.helper.EventHandler" />
+
+        <variable
+            name="msg"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@{viewModel.expressInfo.data[0].context}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="@{clickListener1}"
+            android:text="获取快递信息" />
+
+        <!--________________________________lambda表达式 begin_____________________________________-->
+
+        <!--采用lambda表达式（无参数）-->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="@{handler::gotoNews}"
+            android:text="新闻列表" />
+
+        <!--可以不采用lambda表达式;无参数-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="@{handler.gotoNews}"
+            android:text="新闻列表1" />
+
+
+        <!--按钮指向的是简单方法-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="@{(view)->handler.gotoNews(view)}"
+            android:text="新闻列表2" />
+
+
+        <!--按钮指向的是多参数方法-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="@{(view)->handler.gotoNews2(view, msg)}"
+            android:text="显示信息1" />
+
+
+        <!--________________________________lambda表达式 end_____________________________________-->
+
+        <!--使用ID定义指向方法-->
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="显示信息2" />
+
+        <!--按钮指向的是变量-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="@{handler.myListener}"
+            android:text="显示信息3" />
+    </LinearLayout>
+</layout>

@@ -8,20 +8,20 @@ import android.widget.Toast;
 import com.kedacom.mvvmdemo.view.NewListActivity;
 
 /**
- * @Dec ：
+ * @Dec ：事件处理
  * @Author : Caowj
  * @Date : 2018/6/7 10:28
  */
-public class MyHandler {
+public class EventHandler {
 
-    private View.OnClickListener listener;
+    private View.OnClickListener myListener;
 
-    public View.OnClickListener getListener() {
-        return listener;
+    public View.OnClickListener getMyListener() {
+        return myListener;
     }
 
-    public void setListener(View.OnClickListener listener) {
-        this.listener = listener;
+    public void setMyListener(View.OnClickListener myListener) {
+        this.myListener = myListener;
     }
 
     public void gotoNews(View view) {
@@ -30,7 +30,7 @@ public class MyHandler {
         mContext.startActivity(mIntent);
     }
 
-    public void gotoNews(View view, String msg) {
+    public void gotoNews2(View view, String msg) {
         Context mContext = view.getContext();
         Toast.makeText(mContext, "数据" + msg, Toast.LENGTH_SHORT).show();
     }

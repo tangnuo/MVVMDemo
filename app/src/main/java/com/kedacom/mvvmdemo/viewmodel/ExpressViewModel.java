@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
 import com.kedacom.mvvmdemo.bean.ExpressInfo;
-import com.kedacom.mvvmdemo.databinding.ActivityMainBinding;
+import com.kedacom.mvvmdemo.databinding.ActivityEventBinding;
 import com.kedacom.mvvmdemo.net.RetrofitHelper;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -26,7 +26,7 @@ public class ExpressViewModel {
     // 错误信息
     public final ObservableField<String> errorMessage = new ObservableField<>();
 
-    public ExpressViewModel(ActivityMainBinding binding) {
+    public ExpressViewModel(ActivityEventBinding binding) {
         expressInfo = new ExpressInfo();
         binding.setViewModel(this);
     }
