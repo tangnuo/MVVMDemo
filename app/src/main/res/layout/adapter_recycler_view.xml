@@ -4,32 +4,20 @@
     <data>
 
         <variable
-            name="itemBean"
-            type="com.kedacom.mvvmdemo.bean.ItemBean" />
-
-        <variable
-            name="position"
-            type="int" />
-
-        <variable
-            name="adapter"
-            type="com.kedacom.mvvmdemo.adapter.ItemAdapter" />
+            name="item"
+            type="String" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!--此处不能：android:onClick="@{adapter.gotoInstance(position)}"-->
-        <!--应该写为：android:onClick="@{()-> adapter.gotoInstance(position)}"-->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:onClick="@{()-> adapter.gotoInstance(position)}"
             android:padding="10dp"
-            android:text="@{itemBean.itemContent}"
+            android:text="@{item}"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
 

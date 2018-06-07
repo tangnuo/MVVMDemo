@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.NewListActivity" />
-        <activity android:name=".view.EventActivity"></activity>
+        <activity android:name=".view.EventActivity" />
+        <activity android:name=".view.MultyTypeActivity"></activity>
     </application>
 
 </manifest>
