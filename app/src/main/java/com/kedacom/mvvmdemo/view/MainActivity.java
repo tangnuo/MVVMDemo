@@ -1,6 +1,7 @@
 package com.kedacom.mvvmdemo.view;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.Observable;
 import android.support.v7.app.AppCompatActivity;
@@ -56,5 +57,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        gotoNew();
+    }
+
+
+    private void gotoNew() {
+        Intent mIntent = new Intent(this, NewListActivity.class);
+        startActivity(mIntent);
     }
 }

@@ -1,6 +1,7 @@
 package com.kedacom.mvvmdemo.net;
 
 import com.kedacom.mvvmdemo.bean.ExpressInfo;
+import com.kedacom.mvvmdemo.bean.NewsBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -23,4 +24,8 @@ public interface ApiService {
     @GET("query")
     Observable<ExpressInfo> getExpressInfoRx(@Query("type") String type, @Query("postid") String postid);
 
+
+    //获取“分类中搜索商品”的数据
+    @GET("api/4/themes")
+    Observable<NewsBean> getNewsData();
 }
