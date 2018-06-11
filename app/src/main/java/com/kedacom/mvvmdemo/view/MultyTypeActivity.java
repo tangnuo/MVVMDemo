@@ -12,8 +12,15 @@ import com.kedacom.mvvmdemo.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
- * 多类型
+ * 多类型列表
+ * <p>
+ * https://github.com/alidili/Demos/tree/master/DataBindingDemo
+ * </p>
+ *
+ * @author Caowj
+ * @Date 2018/6/7 15:54
  */
 public class MultyTypeActivity extends AppCompatActivity {
 
