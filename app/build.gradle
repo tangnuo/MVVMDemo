@@ -39,4 +39,6 @@ dependencies {
         exclude group: "com.android.support"
     }
     implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    //日志显示
+    implementation 'com.orhanobut:logger:2.2.0'
 }

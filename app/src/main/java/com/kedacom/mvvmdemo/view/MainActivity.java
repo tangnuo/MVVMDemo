@@ -9,9 +9,11 @@ import com.kedacom.mvvmdemo.R;
 import com.kedacom.mvvmdemo.adapter.ItemAdapter;
 import com.kedacom.mvvmdemo.bean.ItemBean;
 import com.kedacom.mvvmdemo.databinding.ActivityMainBinding;
+import com.kedacom.mvvmdemo.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,5 +38,6 @@ public class MainActivity extends AppCompatActivity {
         beanList.add(new ItemBean("绑定事件", EventActivity.class));
         beanList.add(new ItemBean("新闻列表", NewListActivity.class));
         beanList.add(new ItemBean("多类型列表", MultyTypeActivity.class));
+        LogUtil.d("执行了initData()");
     }
 }
